@@ -20,5 +20,6 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:topics).through(:users_topics) }
+  it { should have_many(:users_topics) }
 end
