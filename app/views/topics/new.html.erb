@@ -1,0 +1,15 @@
+<%= form_for @topic do |f| %>
+  <div id="name" class="field">
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div id="frequency" class="field">
+    <%= f.label :frequency %>
+    <select name="topic[frequency]">
+      <% Topic::FREQUENCIES.each do |f| %>
+        <option value="<%= f %>"><%= f %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <%= f.submit "Create topic" %>
+<% end %>
