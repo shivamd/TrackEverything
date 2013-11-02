@@ -22,4 +22,7 @@ class Topic < ActiveRecord::Base
   )
   validates :name, :frequency, presence: true
   validates :frequency, inclusion: { in: FREQUENCIES }
+
+  has_many :users, through: :users_topics
+  has_many :users_topics
 end
