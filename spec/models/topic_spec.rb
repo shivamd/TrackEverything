@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: topics
+#
+#  id        :integer          not null, primary key
+#  name      :string(255)      not null
+#  frequency :string(255)      not null
+#
+
 require 'spec_helper'
 
 describe Topic do

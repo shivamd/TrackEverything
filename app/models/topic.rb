@@ -3,8 +3,8 @@
 # Table name: topics
 #
 #  id        :integer          not null, primary key
-#  name      :string(255)
-#  frequency :string(255)
+#  name      :string(255)      not null
+#  frequency :string(255)      not null
 #
 
 class Topic < ActiveRecord::Base
