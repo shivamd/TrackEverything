@@ -10,6 +10,7 @@ gem 'pg'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'annotate'
 gem 'devise'
 
 # Use CoffeeScript for .js.coffee assets and views
@@ -36,6 +37,7 @@ end
 group :test, :development do 
   gem 'debugger'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 
