@@ -21,4 +21,5 @@ class Topic < ActiveRecord::Base
     monthly
   )
   validates :name, :frequency, presence: true
+  validates :frequency, inclusion: { in: FREQUENCIES }
 end
