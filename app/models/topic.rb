@@ -25,5 +25,7 @@ class Topic < ActiveRecord::Base
 
   has_many :users, through: :users_topics
   has_many :users_topics
-  has_many :questions
+
+  has_many :questions, inverse_of: :topic
+  accepts_nested_attributes_for :questions, allow_destroy: true
 end

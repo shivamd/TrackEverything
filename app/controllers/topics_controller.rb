@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
 
   def new 
     @topic = Topic.new
+    @question = @topic.questions.build
   end
 
   def create
@@ -19,6 +20,6 @@ class TopicsController < ApplicationController
   private 
 
   def topic_params
-    params.require(:topic).permit(:frequency, :name)
+    params.require(:topic).permit(:frequency, :name, questions_attributes: [:content])
   end
 end

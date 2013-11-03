@@ -10,6 +10,16 @@
       <% end %>
     </select>
   </div>
+  <div id="questions" class="field">
+    <%= f.fields_for :questions do |builder| %>
+      <div class="question">
+        <%= builder.text_field :content, placeholder: "Question" %>
+        <%= builder.hidden_field :_destroy %>
+        <%= link_to "remove", "#", class: "destroy" %>
+      </div>
+    <% end %>
+    <%= link_to_add_fields "Add Question", f, :questions %>
+  </div>
 
   <%= f.submit "Create topic" %>
 <% end %>

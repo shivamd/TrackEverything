@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :topic
+  belongs_to :topic, inverse_of: :questions
 
-  validates :content, :topic_id, presence: true
+  validates :content, :topic,  presence: true
 end
