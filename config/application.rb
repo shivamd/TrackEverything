@@ -13,9 +13,6 @@ Bundler.require(:default, Rails.env)
 
 module TrackAnything
   class Application < Rails::Application
-    api_keys = YAML.load_file(Rails.root.join('config','keys.yml'))
-    ENV['GMAIL_USERNAME'] = api_keys['gmail_username']
-    ENV['GMAIL_PASSWORD'] = api_keys['gmail_password']
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

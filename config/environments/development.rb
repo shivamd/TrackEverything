@@ -13,6 +13,10 @@ TrackAnything::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  api_keys = YAML.load_file(Rails.root.join('config','keys.yml'))
+  ENV['GMAIL_USERNAME'] = api_keys['gmail_username']
+  ENV['GMAIL_PASSWORD'] = api_keys['gmail_password']
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
