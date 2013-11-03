@@ -1,0 +1,7 @@
+These are the following questions you must answer for <%= @topic.name %>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= question.content %></li>
+  <% end %>
+</ul>
