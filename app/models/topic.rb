@@ -25,4 +25,5 @@ class Topic < ActiveRecord::Base
 
   has_many :users, through: :users_topics
   has_many :users_topics
+  has_many :questions
 end

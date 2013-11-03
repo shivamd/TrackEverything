@@ -16,4 +16,6 @@ describe Topic do
   it { should have_many(:users).through(:users_topics) }
   it { should have_many(:users_topics) }
 
+  it { should have_many(:questions) }
+
 end
