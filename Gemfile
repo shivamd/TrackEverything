@@ -6,18 +6,13 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# Use SCSS for stylesheets
+gem 'sendgrid'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'annotate'
 gem 'devise'
 
-# Use CoffeeScript for .js.coffee assets and views
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-#
 #assets
 gem 'sass-rails', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
