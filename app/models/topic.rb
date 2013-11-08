@@ -9,8 +9,8 @@
 
 class Topic < ActiveRecord::Base
   FREQUENCIES = %w(
-    daily
-    weekdays
+    day
+    weekday
     sunday
     monday
     tuesday

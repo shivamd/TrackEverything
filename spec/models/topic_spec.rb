@@ -13,7 +13,7 @@ describe Topic do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:frequency) }
   it { should validate_presence_of(:time) }
-  it { should ensure_inclusion_of(:frequency).in_array(%w(daily weekdays sunday monday tuesday wednesday thursday friday saturday monthly)) }
+  it { should ensure_inclusion_of(:frequency).in_array(%w(day weekday sunday monday tuesday wednesday thursday friday saturday monthly)) }
   it { should have_many(:users).through(:users_topics) }
   it { should have_many(:users_topics) }
 
