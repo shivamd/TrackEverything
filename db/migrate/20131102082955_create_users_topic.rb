@@ -3,6 +3,8 @@ class CreateUsersTopic < ActiveRecord::Migration
     create_table :users_topics do |t|
       t.integer :user_id, null: false
       t.integer :topic_id, null: false
+
+      t.timestamps
     end
   end
 end
