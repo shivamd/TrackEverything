@@ -10,6 +10,9 @@
       <% end %>
     </select>
   </div>
+  <div id="time" class="field">
+    <%= f.text_field :time, placeholder: "6:00pm" %>
+  </div>
   <div id="questions" class="field">
     <%= f.fields_for :questions do |builder| %>
       <div class="question">
