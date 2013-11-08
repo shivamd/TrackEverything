@@ -20,7 +20,7 @@ class Topic < ActiveRecord::Base
     saturday
     monthly
   )
-  validates :name, :frequency, presence: true
+  validates :name, :frequency, :time, presence: true
   validates :frequency, inclusion: { in: FREQUENCIES }
 
   has_many :users, through: :users_topics
