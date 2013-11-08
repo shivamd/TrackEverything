@@ -1,5 +1,13 @@
-require "#{RAILS_ROOT}/config/environment.rb"
+require "./"+ File.dirname(__FILE__) + "/environment.rb"
 set :output, "#{path}/log/cron.log"
 
-every :monday, at: "2:00 AM" do 
+
+@users = User.all
+@users.each do |user|
+  user.topics.each do |topic|
+    every topic.frequency.to_sym, at: topic.time do 
+      #logic to send email
+      runner "Topic.receive_email"
+    end
+  end
 end
