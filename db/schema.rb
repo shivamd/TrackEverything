@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20131108213115) do
     t.string   "frequency",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "time"
+    t.string   "time"
   end
 
   create_table "users", force: true do |t|

@@ -1,6 +1,6 @@
 class AddTimetoTopic < ActiveRecord::Migration
   def up
-    add_column :topics, :time, :integer
+    add_column :topics, :time, :string
   end
   def down
     remove_column :topics, :time
