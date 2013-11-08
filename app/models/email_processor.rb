@@ -1,8 +1,6 @@
 class EmailProcessor
   def self.process(email)
-    p "a"* 100
-    p email.body
-    puts email.body
-    debugger
+    answers = email.body.split(/\r\n\r\n/).delete_if(&:empty?)
+    Topic.receive_email(email, answers)
   end
 end
