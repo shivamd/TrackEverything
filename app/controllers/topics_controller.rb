@@ -20,6 +20,6 @@ class TopicsController < ApplicationController
   private 
 
   def topic_params
-    params.require(:topic).permit(:frequency,:time :name,:time questions_attributes: [:content, :_destroy])
+    params.require(:topic).permit(:frequency,:time, :name, questions_attributes: [:content, :_destroy])
   end
 end
