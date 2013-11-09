@@ -19,16 +19,19 @@
       <div class="pitch">
         <h2>Always Be Improving</h2>
         <p>We all aspire to be the best versions of ourselves. Create goals in various categories in our lives. But they get faded away by other urgent priorities. The mission of Track Everything is to bring these to life on a consistent basis ensuring you stick to your life’s vision.</p>
+        <p>Pick a category. Add questions. Choose a frequency. Reply to an email responding to those questions.</p>
       </div>
       <div class="sign-up">
         <h2>Get Started For Free</h2>
         <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
-          <div><%= f.label :email %><br />
-          <%= f.email_field :email %></div>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email %>
+          </div>
 
-          <div><%= f.label :password %><br />
+          <div class="field"><%= f.label :password %><br />
           <%= f.password_field :password %></div>
 
           <div><%= f.submit "Sign up" %></div>
