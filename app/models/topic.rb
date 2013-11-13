@@ -32,11 +32,11 @@ class Topic < ActiveRecord::Base
   def self.receive_email(email)
     user = User.find_by_email(email.from)
     if user
-      answers = email.body.split(/\r\n\r\n/)
-      topic = Topic.find_by_name(email.to.first[:name])
+      answers = email.body.split(/\n+/)
+      topic = Topic.find_by_name(email.to.first[:token])
       if topic && topic.has_user?(user)
         topic.questions.each_with_index do |question, i|
-          question.create_answer(answers[i])
+          question.create_answer(answers[i], user)
         end
       end
     end
@@ -45,4 +45,5 @@ class Topic < ActiveRecord::Base
   def has_user?(user)
     self.users.include?(user)
   end
+
 end
