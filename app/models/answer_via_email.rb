@@ -8,6 +8,14 @@ class AnswerViaEmail
     @email = email
   end
 
+  def body
+    @email.body
+  end
+  
+  def to
+    @email.to
+  end
+
   def process
     create_answers if user_has_topic?
   end
@@ -29,7 +37,7 @@ class AnswerViaEmail
   end
 
   def answers
-   @email.body.split(/\n+/)
+   body.split(/\n+/)
   end
 
   def user_has_topic?
@@ -37,7 +45,7 @@ class AnswerViaEmail
   end
 
   def topic
-    Topic.find_by_name(@email.to.first[:token])
+    Topic.find_by_name(to.first[:token])
   end
 
   def user 
