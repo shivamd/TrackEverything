@@ -5,7 +5,6 @@ class Question < ActiveRecord::Base
 
   has_many :answers
   def create_answer(answer)
-    debugger
     #self.answers.create(answer: answer) 
   end
 end
