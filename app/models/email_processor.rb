@@ -1,6 +1,5 @@
-class EmailProcessor
+class EmailProcessor < ActiveRecord::Base
   def self.process(email)
-    answers = email.body.split(/\r\n\r\n/).delete_if(&:empty?)
-    Topic.receive_email(email, answers)
+    Topic.receive_email(email)
   end
 end
