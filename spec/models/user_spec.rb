@@ -22,4 +22,5 @@ require 'spec_helper'
 describe User do
   it { should have_many(:topics).through(:users_topics) }
   it { should have_many(:users_topics) }
+  it { should have_many(:answers) }
 end

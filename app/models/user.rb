@@ -24,5 +24,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :topics, through: :users_topics
+  has_many :answers
   has_many :users_topics
 end
