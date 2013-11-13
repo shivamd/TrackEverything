@@ -1,0 +1,9 @@
+<div id="user">
+  <%= @user.email %>'s profile. 
+
+  <div class="topics">
+    <% @user.topics.each do |topic| %>
+      <h3><%= topic.name %></h3>
+    <% end %>
+  </div>
+</div>
