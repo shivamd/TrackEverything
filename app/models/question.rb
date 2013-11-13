@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   validates :content, :topic,  presence: true
 
   has_many :answers
-  def create_answer(answer)
-    #self.answers.create(answer: answer) 
+  def create_answer(answer, user)
+    self.answers.create(content: answer, user_id: user.id) 
   end
 end
