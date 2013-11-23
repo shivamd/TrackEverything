@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require detect_timezone
+//= require jquery.detect_timezone
 //= require turbolinks
 //= require_tree .
