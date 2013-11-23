@@ -27,7 +27,7 @@ feature "manage topics" do
   def user_sees_topic_item(description)
     expect(page).to have_css "h2", text: description
   end
-  
+
   def user_does_not_see_topic_item(description)
     expect(page).to_not have_css "h2", text: description
   end
