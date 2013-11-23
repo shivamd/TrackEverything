@@ -20,3 +20,12 @@ describe Topic do
   it { should have_many(:questions) }
 
 end
+
+describe Topic, "#users" do
+  it "assigns user from the user added to the topic" do 
+    user = User.new(email: "person@example.com", password: "password")
+    topic = Topic.new 
+    topic.users << user
+    expect(topic.users.first.email).to eq "person@example.com"
+  end
+end
