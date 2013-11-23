@@ -23,14 +23,13 @@ describe User do
   it { should have_many(:topics).through(:users_topics) }
   it { should have_many(:users_topics) }
   it { should have_many(:answers) }
-
 end
 
 describe User, "#topics" do
   it "returns topics whose user is the user created with" do
-    user = User.create(email: "person@example.com", password: "password")
+    user = create(:user)
     user.topics.create(name: "my topic")
-    Topic.create(name: "not my topic")
+    create(:topic, name: "not my topic")
     expect(user.topics.length).to eq 1
     expect(user.topics.first.name).to eq "my topic"
   end
@@ -39,7 +38,7 @@ end
 
 describe User, "#email" do
   it "returns the email the user was instantiated with" do 
-    user = User.new(email: "person@example.com", password: "password")
+    user = create(:user, email: "person@example.com")
     expect(user.email).to eq "person@example.com"
   end
 end

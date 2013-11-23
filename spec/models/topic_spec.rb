@@ -23,8 +23,8 @@ end
 
 describe Topic, "#users" do
   it "assigns user from the user added to the topic" do 
-    user = User.new(email: "person@example.com", password: "password")
-    topic = Topic.new 
+    user = create(:user, email: "person@example.com")
+    topic = create(:topic)
     topic.users << user
     expect(topic.users.first.email).to eq "person@example.com"
   end
