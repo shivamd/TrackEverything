@@ -13,8 +13,12 @@ class TopicsController < ApplicationController
       render :new
     else
       UsersTopic.create(topic_id: @topic.id, user_id: current_user.id)
-      redirect_to root_path, notice: "Successfully created a topic"
+      redirect_to topic_path(@topic), notice: "Successfully created a topic"
     end
+  end
+
+  def show
+    @topic = Topic.includes(:questions).find(params[:id])
   end
 
   private 

@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="topic">
+    <h2><%= @topic.name %></h2>
+    <ul class="questions">
+      <% @topic.questions.each do |question| %>
+        <li><%= question.content %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
