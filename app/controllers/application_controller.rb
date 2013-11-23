@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
 
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |user|
-      user.permit(:email, :password, :password_confirmation, :time_zone)
+      user.permit(:email, :password, :password_confirmation, :time_zone, :location)
     end
     devise_parameter_sanitizer.for(:account_update) do |user|
-      user.permit(:email, :password, :password_confirmation,:current_password, :time_zone)
+      user.permit(:email, :password, :password_confirmation,:current_password, :time_zone, :location)
     end
   end
 end
